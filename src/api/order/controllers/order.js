@@ -11,29 +11,29 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
     // @ts-ignore
+
+    // retrieve item information
     const { products, username, email } = ctx.request.body;
     try {
       const lineItems = await Promise.all(
         products.map(async (product) => {
-          const item = await strapi
-            .service("api::course.course")
-            .findOne(product.id);
+          const item = await strapi.service("api::course.course").findOne(2);
 
           return {
             price_data: {
-              currency: "usd",
+              currency: "inr",
               product_data: {
-                name: product.slug,
+                name: item.title,
+                id: item.id,
               },
-              unit_amount: Math.round(product.price * 100),
+              unit_amount: Math.round(item.price * 100),
             },
-            quantity: product.attributes.quantity,
+            quantity: 1,
           };
         })
       );
 
-      console.log({ lineItems });
-
+      // create a stripe session
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         customer_email: email,
@@ -43,8 +43,9 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         line_items: lineItems,
       });
 
+      // create the item
       await strapi.service("api::order.order").create({
-        data: { username, products, stripeSessionToken: session.id },
+        data: { username, products, stripeSessionToken: "2" },
       });
 
       return { id: session.id };
