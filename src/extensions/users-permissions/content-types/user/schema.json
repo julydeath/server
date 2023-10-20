@@ -67,6 +67,12 @@
     },
     "userData": {
       "type": "json"
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "image": {
+      "type": "string"
     }
   }
 }
