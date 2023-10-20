@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * addUserData service
+ * user-courses service
  */
 
 module.exports = () => ({});
