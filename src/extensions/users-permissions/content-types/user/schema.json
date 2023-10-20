@@ -67,6 +67,9 @@
     },
     "userData": {
       "type": "json"
+    },
+    "image": {
+      "type": "string"
     }
   }
 }
