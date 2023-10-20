@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -66,11 +65,8 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "courses": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::course.course",
-      "inversedBy": "users"
+    "userData": {
+      "type": "json"
     }
   }
 }

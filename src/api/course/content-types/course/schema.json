@@ -18,36 +18,30 @@
     "description": {
       "type": "text"
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "price": {
+      "type": "integer"
     },
-    "time": {
+    "priceId": {
       "type": "string"
     },
-    "price": {
-      "type": "decimal"
+    "category": {
+      "type": "string"
+    },
+    "time": {
+      "type": "integer"
     },
     "rating": {
       "type": "decimal"
     },
-    "lessons": {
+    "units": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::lesson.lesson"
+      "target": "api::unit.unit"
     },
     "users": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "courses"
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

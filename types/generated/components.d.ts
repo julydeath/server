@@ -4,11 +4,13 @@ export interface LessonsLessonsdescription extends Schema.Component {
   collectionName: 'components_lessons_lessonsdescriptions';
   info: {
     displayName: 'lessonsdescription';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     subtitle: Attribute.String;
-    content: Attribute.Text;
+    time: Attribute.String;
+    content: Attribute.RichText;
   };
 }
 

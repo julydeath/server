@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "lessons",
+  "collectionName": "units",
   "info": {
-    "singularName": "lesson",
-    "pluralName": "lessons",
-    "displayName": "Lesson",
+    "singularName": "unit",
+    "pluralName": "units",
+    "displayName": "Unit",
     "description": ""
   },
   "options": {
@@ -15,16 +15,7 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
-    "time": {
-      "type": "string"
-    },
-    "video": {
-      "type": "string"
-    },
-    "content": {
+    "lesson": {
       "type": "component",
       "repeatable": true,
       "component": "lessons.lessonsdescription"
