@@ -42,6 +42,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user"
+    },
+    "image": {
+      "type": "string"
     }
   }
 }
