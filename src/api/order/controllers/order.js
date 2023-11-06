@@ -1,6 +1,11 @@
 "use strict";
 // @ts-ignore
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// const stripe = require("stripe")(
+//   "sk_test_51O14wJSGKNDRcuJuuSuJKSjXvpuhFAIq3452rI9JSlQrX0RGFQHwtwv0b5ccxm6fP4MXriAfB91JQb3yyrQDMZl200yMKJxv01"
+// );
+
+console.log(process.env.STRIPE_SECRET_KEY);
 
 /**
  * order controller
@@ -47,6 +52,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         line_items: lineItems,
       });
 
+      console.log({ session });
+
       //create a stripe payment link
       const paymentLink = await stripe.paymentLinks.create({
         line_items: lineItems,
@@ -57,6 +64,12 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           },
         },
       });
+
+      const intent = await stripe.paymentIntents.retrieve(
+        "{{PAYMENT_INTENT_ID}}"
+      );
+      const charges = intent.charges.data;
+      console.log({ charges });
 
       // create the item
       await strapi.service("api::order.order").create({
