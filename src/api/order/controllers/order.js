@@ -1,11 +1,9 @@
 "use strict";
 // @ts-ignore
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-// const stripe = require("stripe")(
-//   "sk_test_51O14wJSGKNDRcuJuuSuJKSjXvpuhFAIq3452rI9JSlQrX0RGFQHwtwv0b5ccxm6fP4MXriAfB91JQb3yyrQDMZl200yMKJxv01"
-// );
-
-console.log(process.env.STRIPE_SECRET_KEY);
+//const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(
+  "sk_test_51O14wJSGKNDRcuJuuSuJKSjXvpuhFAIq3452rI9JSlQrX0RGFQHwtwv0b5ccxm6fP4MXriAfB91JQb3yyrQDMZl200yMKJxv01"
+);
 
 /**
  * order controller
@@ -19,7 +17,6 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
     // retrieve item information
     const { products, username, email } = ctx.request.body;
-    console.log({ ctx });
     try {
       const lineItems = await Promise.all(
         products.map(async (product) => {
@@ -65,11 +62,11 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         },
       });
 
-      const intent = await stripe.paymentIntents.retrieve(
-        "{{PAYMENT_INTENT_ID}}"
-      );
-      const charges = intent.charges.data;
-      console.log({ charges });
+      // const intent = await stripe.paymentIntents.retrieve(
+      //   "{{PAYMENT_INTENT_ID}}"
+      // );
+      // const charges = intent.charges.data;
+      // console.log({ charges });
 
       // create the item
       await strapi.service("api::order.order").create({
