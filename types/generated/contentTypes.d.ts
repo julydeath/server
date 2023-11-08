@@ -709,7 +709,7 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       'plugin::users-permissions.user'
     >;
     image: Attribute.String;
-    quiz: Attribute.Component<'quiz.quiz'>;
+    quiz: Attribute.Component<'quiz.quiz', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

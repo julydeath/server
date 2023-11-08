@@ -48,7 +48,7 @@
     },
     "quiz": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "quiz.quiz"
     }
   }
