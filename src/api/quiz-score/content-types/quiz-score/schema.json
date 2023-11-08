@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quiz_scores",
+  "info": {
+    "singularName": "quiz-score",
+    "pluralName": "quiz-scores",
+    "displayName": "QuizScore"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "courseTitle": {
+      "type": "string"
+    },
+    "score": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

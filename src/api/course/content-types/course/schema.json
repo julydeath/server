@@ -45,6 +45,11 @@
     },
     "image": {
       "type": "string"
+    },
+    "quiz": {
+      "type": "component",
+      "repeatable": false,
+      "component": "quiz.quiz"
     }
   }
 }

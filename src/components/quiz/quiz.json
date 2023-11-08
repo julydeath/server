@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_quiz_quizzes",
+  "info": {
+    "displayName": "quiz",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "correctAnswer": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "quiz.quiz-options"
+    }
+  }
+}

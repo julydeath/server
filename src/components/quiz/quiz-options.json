@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_quiz_quiz_options",
+  "info": {
+    "displayName": "quizOptions"
+  },
+  "options": {},
+  "attributes": {
+    "options": {
+      "type": "string"
+    }
+  }
+}
