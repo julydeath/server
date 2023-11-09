@@ -8,7 +8,7 @@ export interface LessonsLessonsdescription extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    subtitle: Attribute.String;
+    subtitle: Attribute.Text;
     time: Attribute.String;
     content: Attribute.RichText;
   };
