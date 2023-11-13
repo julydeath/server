@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_course_skills_you_gains",
+  "info": {
+    "displayName": "Skills you gain"
+  },
+  "options": {},
+  "attributes": {
+    "points": {
+      "type": "string"
+    }
+  }
+}

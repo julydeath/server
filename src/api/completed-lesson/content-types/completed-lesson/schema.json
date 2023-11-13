@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "completed_lessons",
+  "info": {
+    "singularName": "completed-lesson",
+    "pluralName": "completed-lessons",
+    "displayName": "UserProgress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "completed-lessons.user"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_completed_lessons_users",
+  "info": {
+    "displayName": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "LessonTitle": {
+      "type": "component",
+      "repeatable": true,
+      "component": "completed-lessons.lesson-complete"
+    }
+  }
+}

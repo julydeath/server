@@ -50,6 +50,16 @@
       "type": "component",
       "repeatable": true,
       "component": "quiz.quiz"
+    },
+    "WhatYouWillLearn": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.what-you-will-learn"
+    },
+    "Skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "course.skills-you-gain"
     }
   }
 }

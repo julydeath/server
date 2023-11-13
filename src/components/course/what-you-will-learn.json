@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_course_what_you_will_learns",
+  "info": {
+    "displayName": "What you will learn"
+  },
+  "options": {},
+  "attributes": {
+    "points": {
+      "type": "string"
+    }
+  }
+}

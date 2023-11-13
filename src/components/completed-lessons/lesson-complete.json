@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_completed_lessons_lesson_completes",
+  "info": {
+    "displayName": "LessonComplete"
+  },
+  "options": {},
+  "attributes": {
+    "LessonTitle": {
+      "type": "string"
+    }
+  }
+}

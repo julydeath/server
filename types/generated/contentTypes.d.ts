@@ -679,6 +679,37 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCompletedLessonCompletedLesson
+  extends Schema.CollectionType {
+  collectionName: 'completed_lessons';
+  info: {
+    singularName: 'completed-lesson';
+    pluralName: 'completed-lessons';
+    displayName: 'UserProgress';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.Component<'completed-lessons.user', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::completed-lesson.completed-lesson',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::completed-lesson.completed-lesson',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -710,6 +741,8 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     >;
     image: Attribute.String;
     quiz: Attribute.Component<'quiz.quiz', true>;
+    WhatYouWillLearn: Attribute.Component<'course.what-you-will-learn', true>;
+    Skills: Attribute.Component<'course.skills-you-gain', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -834,6 +867,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::completed-lesson.completed-lesson': ApiCompletedLessonCompletedLesson;
       'api::course.course': ApiCourseCourse;
       'api::order.order': ApiOrderOrder;
       'api::quiz-score.quiz-score': ApiQuizScoreQuizScore;
