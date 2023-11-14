@@ -68,10 +68,19 @@
     "userData": {
       "type": "json"
     },
-    "phone": {
-      "type": "integer"
-    },
     "image": {
+      "type": "string"
+    },
+    "agency": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "phone": {
       "type": "string"
     }
   }

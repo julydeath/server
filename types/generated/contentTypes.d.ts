@@ -616,8 +616,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.role'
     >;
     userData: Attribute.JSON;
-    phone: Attribute.Integer;
     image: Attribute.String;
+    agency: Attribute.String;
+    country: Attribute.String;
+    city: Attribute.String;
+    phone: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
