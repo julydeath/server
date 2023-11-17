@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_array_standardarrays",
+  "info": {
+    "displayName": "standardarray"
+  },
+  "options": {},
+  "attributes": {
+    "LessonsList": {
+      "type": "string"
+    }
+  }
+}

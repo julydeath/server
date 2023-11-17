@@ -621,6 +621,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     country: Attribute.String;
     city: Attribute.String;
     phone: Attribute.String;
+    metadata: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'api::metadata.metadata'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -682,37 +687,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiCompletedLessonCompletedLesson
-  extends Schema.CollectionType {
-  collectionName: 'completed_lessons';
-  info: {
-    singularName: 'completed-lesson';
-    pluralName: 'completed-lessons';
-    displayName: 'UserProgress';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    data: Attribute.Component<'completed-lessons.user', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::completed-lesson.completed-lesson',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::completed-lesson.completed-lesson',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -757,6 +731,41 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMetadataMetadata extends Schema.CollectionType {
+  collectionName: 'metadatas';
+  info: {
+    singularName: 'metadata';
+    pluralName: 'metadatas';
+    displayName: 'metadata';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.Component<'completed-lessons.lesson-complete', true>;
+    users: Attribute.Relation<
+      'api::metadata.metadata',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::metadata.metadata',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::metadata.metadata',
       'oneToOne',
       'admin::user'
     > &
@@ -870,8 +879,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::completed-lesson.completed-lesson': ApiCompletedLessonCompletedLesson;
       'api::course.course': ApiCourseCourse;
+      'api::metadata.metadata': ApiMetadataMetadata;
       'api::order.order': ApiOrderOrder;
       'api::quiz-score.quiz-score': ApiQuizScoreQuizScore;
       'api::unit.unit': ApiUnitUnit;

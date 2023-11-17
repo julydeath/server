@@ -82,6 +82,12 @@
     },
     "phone": {
       "type": "string"
+    },
+    "metadata": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::metadata.metadata",
+      "mappedBy": "users"
     }
   }
 }

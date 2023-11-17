@@ -1,5 +1,15 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ArrayStandardarray extends Schema.Component {
+  collectionName: 'components_array_standardarrays';
+  info: {
+    displayName: 'standardarray';
+  };
+  attributes: {
+    LessonsList: Attribute.String;
+  };
+}
+
 export interface CompletedLessonsLessonComplete extends Schema.Component {
   collectionName: 'components_completed_lessons_lesson_completes';
   info: {
@@ -83,6 +93,7 @@ export interface QuizQuiz extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'array.standardarray': ArrayStandardarray;
       'completed-lessons.lesson-complete': CompletedLessonsLessonComplete;
       'completed-lessons.user': CompletedLessonsUser;
       'course.skills-you-gain': CourseSkillsYouGain;

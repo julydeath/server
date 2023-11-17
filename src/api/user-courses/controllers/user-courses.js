@@ -1,9 +1,5 @@
 "use strict";
 
-/**
- * A set of functions called "actions" for `user-courses`
- */
-
 module.exports = {
   async find(ctx) {
     const user = ctx.state.user;
