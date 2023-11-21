@@ -1,0 +1,20 @@
+diff --git a/node_modules/@strapi/plugin-graphql/server/services/constants.js b/node_modules/@strapi/plugin-graphql/server/services/constants.js
+index ed4ffa7..5b98bd8 100644
+--- a/node_modules/@strapi/plugin-graphql/server/services/constants.js
++++ b/node_modules/@strapi/plugin-graphql/server/services/constants.js
+@@ -24,6 +24,7 @@ const STRAPI_SCALARS = [
+   'integer',
+   'string',
+   'richtext',
++  'blocks',
+   'enumeration',
+   'biginteger',
+   'float',
+@@ -49,6 +50,7 @@ const SCALARS_ASSOCIATIONS = {
+   string: 'String',
+   enumeration: 'String',
+   richtext: 'String',
++  blocks: 'JSON',
+   biginteger: 'Long',
+   float: 'Float',
+   decimal: 'Float',
