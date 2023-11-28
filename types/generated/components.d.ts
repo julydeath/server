@@ -63,6 +63,7 @@ export interface LessonsLessonsdescription extends Schema.Component {
     subtitle: Attribute.Text;
     time: Attribute.String;
     content: Attribute.RichText;
+    lessonContent: Attribute.Blocks;
   };
 }
 
