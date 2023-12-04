@@ -733,7 +733,6 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     description: Attribute.Text;
     price: Attribute.Integer;
     priceId: Attribute.String;
-    category: Attribute.String;
     time: Attribute.Integer;
     rating: Attribute.Decimal;
     units: Attribute.Relation<
@@ -750,6 +749,11 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     quiz: Attribute.Component<'quiz.quiz', true>;
     WhatYouWillLearn: Attribute.Component<'course.what-you-will-learn', true>;
     Skills: Attribute.Component<'course.skills-you-gain', true>;
+    category: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
