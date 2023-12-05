@@ -71,9 +71,10 @@ export interface QuizQuizOptions extends Schema.Component {
   collectionName: 'components_quiz_quiz_options';
   info: {
     displayName: 'quizOptions';
+    description: '';
   };
   attributes: {
-    options: Attribute.String;
+    option: Attribute.String;
   };
 }
 
