@@ -4,7 +4,8 @@
   "info": {
     "singularName": "metadata",
     "pluralName": "metadatas",
-    "displayName": "metadata"
+    "displayName": "metadata",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

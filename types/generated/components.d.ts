@@ -14,9 +14,11 @@ export interface CompletedLessonsLessonComplete extends Schema.Component {
   collectionName: 'components_completed_lessons_lesson_completes';
   info: {
     displayName: 'LessonComplete';
+    description: '';
   };
   attributes: {
     LessonTitle: Attribute.String;
+    course_id: Attribute.String;
   };
 }
 

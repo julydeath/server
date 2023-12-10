@@ -1,11 +1,16 @@
 {
   "collectionName": "components_completed_lessons_lesson_completes",
   "info": {
-    "displayName": "LessonComplete"
+    "displayName": "LessonComplete",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "LessonTitle": {
+      "type": "string",
+      "unique": false
+    },
+    "course_id": {
       "type": "string"
     }
   }

@@ -778,6 +778,7 @@ export interface ApiMetadataMetadata extends Schema.CollectionType {
     singularName: 'metadata';
     pluralName: 'metadatas';
     displayName: 'metadata';
+    description: '';
   };
   options: {
     draftAndPublish: true;
