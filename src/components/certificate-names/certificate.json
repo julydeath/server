@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_certificate_names_certificates",
+  "info": {
+    "displayName": "certificate"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "signature": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

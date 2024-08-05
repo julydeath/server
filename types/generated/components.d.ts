@@ -10,6 +10,17 @@ export interface ArrayStandardarray extends Schema.Component {
   };
 }
 
+export interface CertificateNamesCertificate extends Schema.Component {
+  collectionName: 'components_certificate_names_certificates';
+  info: {
+    displayName: 'certificate';
+  };
+  attributes: {
+    name: Attribute.String;
+    signature: Attribute.Media;
+  };
+}
+
 export interface CompletedLessonsLessonComplete extends Schema.Component {
   collectionName: 'components_completed_lessons_lesson_completes';
   info: {
@@ -98,6 +109,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'array.standardarray': ArrayStandardarray;
+      'certificate-names.certificate': CertificateNamesCertificate;
       'completed-lessons.lesson-complete': CompletedLessonsLessonComplete;
       'completed-lessons.user': CompletedLessonsUser;
       'course.skills-you-gain': CourseSkillsYouGain;

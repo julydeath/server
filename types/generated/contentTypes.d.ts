@@ -717,6 +717,39 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiCertificateCertificate extends Schema.CollectionType {
+  collectionName: 'certificates';
+  info: {
+    singularName: 'certificate';
+    pluralName: 'certificates';
+    displayName: 'Certificate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    certificate: Attribute.Component<'certificate-names.certificate', true> &
+      Attribute.SetMinMax<{
+        max: 2;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::certificate.certificate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::certificate.certificate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Schema.CollectionType {
   collectionName: 'contacts';
   info: {
@@ -948,6 +981,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::category.category': ApiCategoryCategory;
+      'api::certificate.certificate': ApiCertificateCertificate;
       'api::contact.contact': ApiContactContact;
       'api::course.course': ApiCourseCourse;
       'api::metadata.metadata': ApiMetadataMetadata;
